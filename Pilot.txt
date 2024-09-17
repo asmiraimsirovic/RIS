@@ -1,0 +1,24 @@
+CREATE DATABASE pilot;  -- Kreiranje baze
+USE pilot;  -- Upotreba baze 
+
+CREATE TABLE Pilot (  --Kreiranje tabele
+    id_pilota INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    lozinka VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Putnici (  --Kreiranje druge tabele
+    id_putnika INT AUTO_INCREMENT PRIMARY KEY,
+    ime VARCHAR(255) NOT NULL,
+    prezime VARCHAR(255) NOT NULL,
+    pasos CHAR(8) COLLATE utf8_bin NOT NULL,  
+    id_pilota INT,
+    FOREIGN KEY (id_pilota) REFERENCES Pilot(id_pilota)
+);
+
+
+INSERT INTO Pilot (email, lozinka) VALUES ('pilot@example.com', MD5('lozinka123')); -- Dodavanje početnog pilota
+
+INSERT INTO Putnici (ime, prezime, pasos, id_pilota) VALUES ('Linz', 6, '578B64D9', 1);  -- Dodavanje početnih putnika
+INSERT INTO Putnici (ime, prezime, pasos, id_pilota) VALUES ('Maribor', 5, '346G67G7', 1);
+

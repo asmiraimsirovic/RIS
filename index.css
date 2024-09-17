@@ -1,0 +1,56 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Sprječava prekomjerno skrolanje */
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+/* Container stilovi */
+.container {
+    position: absolute;
+    bottom: 0; 
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px 10px 0 0; 
+    z-index: 1; 
+}
+
+/* Stilovi za h1 */
+h1 {
+    font-size: 2.5em;
+    color: transparent;
+    margin-bottom: 20px; 
+}
+
+/* Stilovi za dugme */
+.btn {
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 1.2em;
+    color: white;
+    background-color:#4682B4;
+    border: none;
+    border-radius: 60px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: rgb(2, 56, 64); 
+}
